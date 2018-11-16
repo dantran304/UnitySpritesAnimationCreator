@@ -23,16 +23,6 @@ public class AnimationCreator : ScriptableObject
     [Header("Tên các folder con chứa sprite, có bao nhiêu folder sẽ tạo bấy nhiêu file clip")]
     public List<AnimOnFolder> listFolderName = new List<AnimOnFolder>();
 
-    void OnGUI()
-    {
-        GUILayout.Label("Inventory Item Editor", EditorStyles.boldLabel);
-
-        if (GUILayout.Button("Show Item List"))
-        {
-
-        }
-    }
-
     public void CreateAnimation()
     {
         if (createAnimOverride)
