@@ -25,11 +25,14 @@ public class AnimationCreator : ScriptableObject
 
     public void CreateAnimation()
     {
+        // Creates the controller
+        var animatorController = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath
+            (string.Format("Assets/Resources/{0}/{1}/{2}.controller", folderPath0, folderPath, folderPath));
+
         if (createAnimOverride)
         {
             AnimatorOverrideController animOverrideController = new AnimatorOverrideController();
-            var name = folderPath;
-            AssetDatabase.CreateAsset(animOverrideController, string.Format("Assets/Resources/{0}/{1}/{2}.overrideController", folderPath0, folderPath, name));
+            AssetDatabase.CreateAsset(animOverrideController, string.Format("Assets/Resources/{0}/{1}/{2}.overrideController", folderPath0, folderPath, folderPath));
         }
 
         for (int i = 0; i < listFolderName.Count; i++)
